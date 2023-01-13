@@ -1,0 +1,26 @@
+class Account:
+    """OOP Bank Account"""
+    def __init__(self, owner,balance):
+        self.owner=owner
+        self.balance=int(balance)
+        statement=print(f"Account Owner: {self.owner}\nAvaliable Balance: ${self.balance}")
+
+
+
+    def deposit(self,money_added):
+           self.balance += int(money_added)
+           print(f"Deposit Accepted, Your amount is: {self.balance}")  
+    
+    def withdraw(self,money_removed):
+            if int(self.balance) - int(money_removed)<=0:
+                print(f"Funds Unavaliable, Your amount is: {self.balance}")
+            else:
+                self.balance=int(self.balance)-int(money_removed)
+                print(f"Withdraw Accepted, Your amount is: {self.balance}")
+                return self.balance            
+                
+                
+acct1 = Account('Sam',300)
+acct1.deposit(50)
+acct1.withdraw(25)
+acct1.withdraw(500)
